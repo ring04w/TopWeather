@@ -102,33 +102,33 @@ public class TopWeatherDB {
 		return list;	
 	}
 	
-/***Country living example store to database****/
+/***county living example store to database****/
 	
-	public void saveCountry(Country country){
-		if(country != null){
+	public void saveCounty(County county){
+		if(county != null){
 			ContentValues values = new ContentValues();
-			values.put("country_name", country.getCountryName());	
-			values.put("country_code", country.getCountryCode());
-			values.put("city_id", country.getCityId());
-			db.insert("Country", null, values);
+			values.put("county_name", county.getCountyName());	
+			values.put("county_code", county.getCountyCode());
+			values.put("city_id", county.getCityId());
+			db.insert("County", null, values);
 		}	
 	}
 	
-	/*** Read information of all countries of China from databases***/
+	/*** Read information of all counties of Cities from databases***/
 	
-	public List<Country> loadCountries(int cityId){
-		List<Country> list = new ArrayList<Country>();
+	public List<County> loadCountries(int cityId){
+		List<County> list = new ArrayList<County>();
 		Cursor cursor = db
-				.query("Country", null, "city_id = ?",
+				.query("County", null, "city_id = ?",
 						new String[] {String.valueOf(cityId)}, null, null, null);
 		if(cursor.moveToFirst()){
 			do{
-				Country country = new Country();
-				country.setId(cursor.getInt(cursor.getColumnIndex("id")));
-				country.setCountryName(cursor.getString(cursor.getColumnIndex("country_name")));
-				country.setCountryCode(cursor.getString(cursor.getColumnIndex("country_code")));
-				country.setCityId(cityId);
-				list.add(country);
+				County county = new County();
+				county.setId(cursor.getInt(cursor.getColumnIndex("id")));
+				county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_name")));
+				county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
+				county.setCityId(cityId);
+				list.add(county);
 				
 			}while(cursor.moveToNext());
 			
@@ -136,18 +136,6 @@ public class TopWeatherDB {
 		return list;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }
