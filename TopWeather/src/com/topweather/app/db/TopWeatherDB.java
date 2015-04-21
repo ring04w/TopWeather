@@ -1,4 +1,4 @@
-package com.topweather.app.model;
+package com.topweather.app.db;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.topweather.app.db.TopWeatherOpenHelper;
+import com.topweather.app.model.City;
+import com.topweather.app.model.County;
+import com.topweather.app.model.Province;
 
 public class TopWeatherDB {
 	/***database's name***/

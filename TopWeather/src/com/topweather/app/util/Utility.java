@@ -2,10 +2,10 @@ package com.topweather.app.util;
 
 import android.text.TextUtils;
 
+import com.topweather.app.db.TopWeatherDB;
 import com.topweather.app.model.City;
 import com.topweather.app.model.County;
 import com.topweather.app.model.Province;
-import com.topweather.app.model.TopWeatherDB;
 
 public class Utility {
 	/***analysis and handle the province data from server***/
